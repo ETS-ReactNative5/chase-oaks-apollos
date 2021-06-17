@@ -377,7 +377,7 @@
 						TestTargetID = 13B07F861A680F5B00A75B9A;
 					};
 					13B07F861A680F5B00A75B9A = {
-						DevelopmentTeam = 78C83MR28T;
+						DevelopmentTeam = 6L9625YX3B;
 						LastSwiftMigration = 1220;
 						ProvisioningStyle = Automatic;
 					};
@@ -791,7 +791,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 507;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_TEAM = 78C83MR28T;
+				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
@@ -803,7 +803,7 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.differential.apollos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.subsplashconsulting.RNV2KH;
 				PRODUCT_NAME = ChaseOaks;
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChaseOaks-Bridging-Header.h";
@@ -824,7 +824,7 @@
 				CODE_SIGN_IDENTITY = "Apple Distribution: Differential Dev Shop, LLC (7KS82J74VW)";
 				CODE_SIGN_STYLE = Manual;
 				CURRENT_PROJECT_VERSION = 507;
-				DEVELOPMENT_TEAM = 7KS82J74VW;
+				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-video/ios",
@@ -836,9 +836,9 @@
 					"-ObjC",
 					"-lc++",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.differential.apollos;
+				PRODUCT_BUNDLE_IDENTIFIER = com.subsplashconsulting.RNV2KH;
 				PRODUCT_NAME = ChaseOaks;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.differential.apollos";
+				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.subsplashconsulting.RNV2KH";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChaseOaks-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "apple-generic";
