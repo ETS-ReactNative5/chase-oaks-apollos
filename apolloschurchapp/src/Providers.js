@@ -1,18 +1,18 @@
-import React from 'react';
-import ApollosConfig from '@apollosproject/config';
-import { Providers, NavigationService } from '@apollosproject/ui-kit';
-import { AuthProvider } from '@apollosproject/ui-auth';
-import { AnalyticsProvider } from '@apollosproject/ui-analytics';
-import { NotificationsProvider } from '@apollosproject/ui-notifications';
+import React from "react";
+import ApollosConfig from "@apollosproject/config";
+import { Providers, NavigationService } from "@apollosproject/ui-kit";
+import { AuthProvider } from "@apollosproject/ui-auth";
+import { AnalyticsProvider } from "@apollosproject/ui-analytics";
+import { NotificationsProvider } from "@apollosproject/ui-notifications";
 import {
   LiveProvider,
   ACCEPT_FOLLOW_REQUEST,
-} from '@apollosproject/ui-connected';
-import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import { ONBOARDING_VERSION } from './ui/Onboarding';
+} from "@apollosproject/ui-connected";
+import { checkOnboardingStatusAndNavigate } from "@apollosproject/ui-onboarding";
+import { ONBOARDING_VERSION } from "./ui/Onboarding";
 
-import ClientProvider, { client } from './client';
-import customTheme, { customIcons } from './theme';
+import ClientProvider, { client } from "./client";
+import customTheme, { customIcons } from "./theme";
 
 const AppProviders = (props) => (
   <ClientProvider {...props}>
@@ -21,11 +21,11 @@ const AppProviders = (props) => (
       // TODO deprecated prop
       navigate={NavigationService.navigate}
       handleExternalLink={(url) => {
-        const path = url.split('app-link/')[1];
-        const [route, location] = path.split('/');
-        if (route === 'content')
-          NavigationService.navigate('ContentSingle', { itemId: location });
-        if (route === 'nav')
+        const path = url.split("app-link/")[1];
+        const [route, location] = path.split("/");
+        if (route === "content")
+          NavigationService.navigate("ContentSingle", { itemId: location });
+        if (route === "nav")
           NavigationService.navigate(
             // turns "home" into "Home"
             location[0].toUpperCase() + location.substring(1)
@@ -41,7 +41,7 @@ const AppProviders = (props) => (
       }}
     >
       <AuthProvider
-        navigateToAuth={() => NavigationService.navigate('Auth')}
+        navigateToAuth={() => NavigationService.navigate("Auth")}
         navigate={NavigationService.navigate}
         closeAuth={() =>
           checkOnboardingStatusAndNavigate({
