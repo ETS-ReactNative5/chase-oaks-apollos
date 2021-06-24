@@ -1,1 +1,7 @@
-Template app for the Apollos Project
+Welcome to the official Chase Oaks Church App.
+
+The Chase Oaks Church App will keep you connected to Chase Oaks while you're on the go! The app features both video and audio of our latest sermon series and sermon-based studies to help you go deeper with others after each week's message. It also keeps you informed of the latest stories, news, and events at Chase Oaks. After you've enjoyed the content, you can share it with your friends via Twitter, Facebook, or email.
+
+For more information about Chase Oaks, please visit www.chaseoaks.org.
+
+The Chase Oaks Church App was created with the Apollos Project.
