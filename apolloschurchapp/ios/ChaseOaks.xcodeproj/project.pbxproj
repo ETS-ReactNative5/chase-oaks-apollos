@@ -818,9 +818,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChaseOaks/ChaseOaks.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
@@ -836,7 +836,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.subsplashconsulting.RNV2KH;
 				PRODUCT_NAME = ChaseOaks;
-				PROVISIONING_PROFILE_SPECIFIER = "match AppStore com.subsplashconsulting.RNV2KH";
+				PROVISIONING_PROFILE_SPECIFIER = "match Development com.subsplashconsulting.RNV2KH";
 				SWIFT_OBJC_BRIDGING_HEADER = "ChaseOaks-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
@@ -852,9 +852,9 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = ChaseOaks/ChaseOaks.entitlements;
-				CODE_SIGN_IDENTITY = "Apple Distribution: Differential Dev Shop, LLC (7KS82J74VW)";
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 24;
+				CURRENT_PROJECT_VERSION = 25;
 				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
