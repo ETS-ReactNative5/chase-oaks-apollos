@@ -97,48 +97,6 @@ TABS:
       isCard: false
       type: PrayerList
       title: Daily Prayer
-    - algorithms:
-      - type: CONTENT_FEED
-        arguments:
-          channelIds:
-            - 6
-      type: HeroList
-      primaryAction:
-        # Right now, you hardcode exactly what GraphQL should return.
-        # Long term, we hope to have a more sophisticated mechanism for driving this field
-        action: OPEN_NODE
-        title: 'Read More'
-        relatedNode:
-          __typename: UniversalContentItem
-          id: 21
-
-    - algorithms:
-        - type: CAMPAIGN_ITEMS
-          channelIds:
-            - 9
-      type: HeroList
-      isFeatured: true
-      subtitle: Featured
-    - title: FOR YOU
-      algorithms: [SERMON_CHILDREN, PERSONA_FEED]
-      subtitle: Explore what God calls you to today
-      type: ActionList
-    - algorithms: [PERSONA_FEED]
-      subtitle: Continue
-      type: HorizontalCardList
-    - title: RECOMMENDED
-      algorithms: [SERMON_CHILDREN]
-      subtitle: For Him
-      type: VerticalCardList
-    - title: BULLETIN
-      subtitle: What's happening at apollos?
-      type: ActionList
-      algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 13
-        - type: UPCOMING_EVENTS
 
   READ:
     - algorithms:
