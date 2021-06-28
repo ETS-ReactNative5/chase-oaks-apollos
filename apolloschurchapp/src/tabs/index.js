@@ -31,7 +31,7 @@ const HeaderLogo = withTheme(({ theme }) => ({
 const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
   name: 'search',
   size: baseUnit * 2,
-  fill: colors.primary,
+  fill: colors.secondary,
 }))(Icon);
 
 const SearchButton = ({ onPress }) => (
