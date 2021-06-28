@@ -95,22 +95,22 @@ const TabNavigator = () => {
       <Screen
         name="Home"
         component={HomeTab}
-        options={{ tabBarIcon: tabBarIcon('home') }}
+        options={{ tabBarIcon: tabBarIcon('house') }}
       />
       <Screen
         name="Watch"
         component={WatchTab}
-        options={{ tabBarIcon: tabBarIcon('video') }}
+        options={{ tabBarIcon: tabBarIcon('watch') }}
       />
       <Screen
         name="Explore"
         component={ExploreTab}
-        options={{ tabBarIcon: tabBarIcon('sections') }}
+        options={{ tabBarIcon: tabBarIcon('explore') }}
       />
       <Screen
         name="Connect"
         component={Connect}
-        options={{ tabBarIcon: tabBarIcon('profile') }}
+        options={{ tabBarIcon: tabBarIcon('connect') }}
       />
     </Navigator>
   );

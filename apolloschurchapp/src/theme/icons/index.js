@@ -1,2 +1,4 @@
-/* Export your custom icon components here. */
-export {};
+export House from './House';
+export Watch from './Watch';
+export Connect from './Connect';
+export Explore from './Explore';
