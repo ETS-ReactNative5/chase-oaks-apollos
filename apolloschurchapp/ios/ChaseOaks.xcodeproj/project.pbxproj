@@ -820,7 +820,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChaseOaks/ChaseOaks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
@@ -829,6 +829,7 @@
 				);
 				INFOPLIST_FILE = ChaseOaks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.14.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -855,7 +856,7 @@
 				CODE_SIGN_ENTITLEMENTS = ChaseOaks/ChaseOaks.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
-				CURRENT_PROJECT_VERSION = 26;
+				CURRENT_PROJECT_VERSION = 27;
 				DEVELOPMENT_TEAM = 6L9625YX3B;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
@@ -863,6 +864,7 @@
 				);
 				INFOPLIST_FILE = ChaseOaks/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MARKETING_VERSION = 5.14.1;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
