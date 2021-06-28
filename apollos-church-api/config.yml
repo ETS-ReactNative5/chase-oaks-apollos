@@ -93,17 +93,10 @@ ROCK_MAPPINGS:
 
 TABS:
   HOME:
-    - type: ActionBar
-      title: Welcome to Apollos
-      actions:
-        [
-          {
-            title: Check In,
-            icon: check,
-            action: OPEN_URL,
-            relatedNode: { __typename: Url, url: 'https://www.google.com' },
-          },
-        ]
+    - algorithms: [DAILY_PRAYER]
+      isCard: false
+      type: PrayerList
+      title: Daily Prayer
     - algorithms:
       - type: CONTENT_FEED
         arguments:
@@ -118,10 +111,7 @@ TABS:
         relatedNode:
           __typename: UniversalContentItem
           id: 21
-    - algorithms: [DAILY_PRAYER]
-      isCard: false
-      type: PrayerList
-      title: Daily Prayer
+
     - algorithms:
         - type: CAMPAIGN_ITEMS
           channelIds:
