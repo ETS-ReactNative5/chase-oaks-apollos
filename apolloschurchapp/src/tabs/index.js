@@ -63,11 +63,19 @@ const HomeTab = createFeatureFeedTab({
 });
 
 const ExploreTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerRight: HeaderRight,
+  },
   tabName: 'Explore',
   feedName: 'READ',
 });
 
 const WatchTab = createFeatureFeedTab({
+  screenOptions: {
+    headerHideShadow: true,
+    headerRight: HeaderRight,
+  },
   tabName: 'Watch',
   feedName: 'WATCH',
 });
