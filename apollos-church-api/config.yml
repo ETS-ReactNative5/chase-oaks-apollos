@@ -98,6 +98,8 @@ TABS:
       isCard: false
       type: PrayerList
       title: Daily Prayer
+    # - type: VerticalPrayerList
+    #   title: Your Prayers
     - algorithms:
         - type: CONTENT_FEED
           arguments:
