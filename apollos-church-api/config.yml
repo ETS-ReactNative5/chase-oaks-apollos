@@ -136,7 +136,7 @@ TABS:
               - 22
             limit: 3
       type: HorizontalCardList
-      subtitle: Browse by series
+      title: Browse by series
       primaryAction:
         action: OPEN_CHANNEL
         relatedNode:
