@@ -88,6 +88,7 @@ ROCK_MAPPINGS:
     - 363 # Daily Scripture
     - 39 # Blog
     - 23 # Sermon Messages
+    - 22 # Sermon Series
 
   SERMON_CHANNEL_ID: 5
 
@@ -97,6 +98,22 @@ TABS:
       isCard: false
       type: PrayerList
       title: Daily Prayer
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
+              - 363
+      title: Daily Scripture
+      type: VerticalCardList
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 364
+            limit: 3
+      type: HorizontalCardList
+      title: Weekly Challenges
 
   WATCH:
     - algorithms:
