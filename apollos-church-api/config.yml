@@ -84,10 +84,10 @@ ROCK_MAPPINGS:
     PersonaId: 210
 
   ALL_CONTENT_CHANNELS:
-    - 3
-    - 5
-    - 6
-    - 8
+    - 364 # Weekly Challenges
+    - 363 # Daily Scripture
+    - 39 # Blog
+    - 23 # Sermon Messages
 
   SERMON_CHANNEL_ID: 5
 
@@ -100,73 +100,39 @@ TABS:
 
   WATCH:
     - algorithms:
-        - type: LATEST_SERIES_CHILDREN
+        - type: CONTENT_FEED
           arguments:
-            channelId: 4
+            channelIds:
+              - 23
+            limit: 4
       type: HeroList
-      title: Catch up
-      subtitle: Latest Series
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 4
-      type: VerticalCardList
-      subtitle: All series
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 3
-            limit: 3
-      type: HorizontalCardList
-      subtitle: Sermons
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 5
-            limit: 3
-      type: HorizontalCardList
-      subtitle: Podcasts
       primaryAction:
         action: OPEN_CHANNEL
-        title: 'Read More'
+        title: Recent messages
         relatedNode:
           __typename: ContentChannel
-          id: 5
-          name: Podcasts
+          id: 23
     - algorithms:
         - type: CONTENT_FEED
           arguments:
             channelIds:
-              - 6
+              - 22
             limit: 3
       type: HorizontalCardList
-      title: Videos
+      subtitle: Browse by series
       primaryAction:
         action: OPEN_CHANNEL
-        title: 'Read More'
         relatedNode:
           __typename: ContentChannel
-          id: 6
-          name: Videos
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 8
-            limit: 3
-      type: HorizontalCardList
-      subtitle: Something Else
+          id: 22
+          name: Series
 
   READ:
     - algorithms:
         - type: CONTENT_FEED
           arguments:
             channelIds:
-              - 7
-            limit: 3
+              - 39
       type: VerticalCardList
       primaryAction:
         action: OPEN_CHANNEL
