@@ -98,23 +98,6 @@ TABS:
       type: PrayerList
       title: Daily Prayer
 
-  READ:
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 7
-            limit: 3
-      type: HorizontalCardList
-      subtitle: Devotionals
-      primaryAction:
-        action: OPEN_CHANNEL
-        title: 'Read More'
-        relatedNode:
-          __typename: ContentChannel
-          id: 7
-          name: Devotionals
-
   WATCH:
     - algorithms:
         - type: LATEST_SERIES_CHILDREN
@@ -177,13 +160,22 @@ TABS:
       type: HorizontalCardList
       subtitle: Something Else
 
-  PRAY:
-    - algorithms: [DAILY_PRAYER]
-      isCard: false
-      type: PrayerList
-      title: Daily Prayer
-    - type: VerticalPrayerList
-      title: Your Prayers
+  READ:
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 7
+            limit: 3
+      type: VerticalCardList
+      primaryAction:
+        action: OPEN_CHANNEL
+        title: 'Read More'
+        relatedNode:
+          __typename: ContentChannel
+          id: 7
+          name: Devotionals
+          
   CONNECT:
     - type: ActionTable
       title: Connect to Apollos
