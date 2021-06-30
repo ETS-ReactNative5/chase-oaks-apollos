@@ -67,7 +67,7 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [6]
+      ContentChannelTypeId: [22]
     DevotionalContentItem:
       EntityType: ContentChannelItem
       ContentChannelId: [363]
@@ -76,7 +76,7 @@ ROCK_MAPPINGS:
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [5]
+      ContentChannelId: [23]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
@@ -92,7 +92,7 @@ ROCK_MAPPINGS:
     - 23 # Sermon Messages
     - 22 # Sermon Series
 
-  SERMON_CHANNEL_ID: 22
+  SERMON_CHANNEL_ID: 23
 
 TABS:
   HOME:
@@ -162,7 +162,7 @@ TABS:
           __typename: ContentChannel
           id: 7
           name: Devotionals
-          
+
   CONNECT:
     - type: ActionTable
       title: Connect to Apollos
@@ -179,4 +179,4 @@ TABS:
             relatedNode: { __typename: Url, url: 'https://www.facebook.com' },
           },
         ]
-        
+
