@@ -8,9 +8,10 @@
  * on a per-component basis with "overrides"
  */
 const colors = {
-  primary: '#E74E39',
+  primary: '#413A60',
   secondary: '#413A60',
-  tertiary: '#333E48',
+  tertiary: '#E74E39',
+  // an additional color for Chase Oaks is #333E48
 };
 
 /* Base Typography sizing and fonts.
