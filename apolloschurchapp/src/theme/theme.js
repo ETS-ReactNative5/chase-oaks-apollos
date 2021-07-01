@@ -17,7 +17,35 @@ const colors = {
 /* Base Typography sizing and fonts.
  * To control speicfic styles used on different type components (like H1, H2, etc), see "overrides"
  */
-// const typography = {};
+const typography = {
+  sans: {
+    regular: {
+      default: 'HelveticaNeue-CondensedBold',
+    },
+    medium: {
+      default: 'HelveticaNeue-CondensedBold',
+    },
+    bold: {
+      default: 'HelveticaNeue-CondensedBold',
+    },
+    black: {
+      default: 'HelveticaNeue-CondensedBold',
+    },
+  },
+  // serif: {
+  //   regular: {
+  //     default: 'DroidSerif',
+  //     italic: 'DroidSerif-Italic',
+  //   },
+  //   bold: {
+  //     default: 'DroidSerif-Bold',
+  //     italic: 'DroidSerif-BoldItalic',
+  //   },
+  // },
+  ui: {
+    regular: 'System',
+  },
+};
 
 /* Responsive breakpoints */
 // export const breakpoints = {};
@@ -31,7 +59,18 @@ const colors = {
 // export const alpha = {};
 
 /* Base overlays. These are used as configuration for LinearGradients across the app */
-// export const overlays = () => ({});
+// const overlays = ({ colors: themeColors }) => ({
+//   'background-gradient': ({ colors: customColors }) => ({
+//     colors: customColors || [
+//       themeColors.background.screen,
+//       themeColors.background.screen,
+//     ],
+//     // default props from `react-native-linear-gradient`
+//     start: { x: 0.5, y: 0.0 },
+//     end: { x: 0.5, y: 1.0 },
+//     locations: null,
+//   }),
+// });
 
 /* Overrides allow you to override the styles of any component styled using the `styled` HOC. You
  * can also override the props of any component using the `withTheme` HOC. See examples below:
@@ -55,4 +94,4 @@ const colors = {
  */
 // const overrides = {};
 
-export default { colors };
+export default { colors, typography, overlays };
