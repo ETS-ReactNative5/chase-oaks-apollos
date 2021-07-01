@@ -93,5 +93,28 @@ const typography = {
  * ```
  */
 // const overrides = {};
+const overrides = {
+  H1: {
+    textTransform: 'uppercase',
+  },
+  H2: {
+    textTransform: 'uppercase',
+  },
+  H3: {
+    textTransform: 'uppercase',
+  },
+  H4: {
+    textTransform: 'uppercase',
+  },
+  H5: {
+    textTransform: 'uppercase',
+  },
+  H6: {
+    textTransform: 'uppercase',
+  },
+  'HeroListFeature.Title': () => ({
+    textTransform: 'uppercase',
+  }),
+};
 
-export default { colors, typography, overlays };
+export default { colors, typography, overrides };
