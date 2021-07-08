@@ -20,13 +20,16 @@ const colors = {
 const typography = {
   sans: {
     regular: {
-      default: 'HelveticaNeue-CondensedBold',
+      default: 'HelveticaNeue',
+      italic: 'HelveticaNeue-Italic',
     },
     medium: {
-      default: 'HelveticaNeue-CondensedBold',
+      default: 'HelveticaNeue-Medium',
+      italic: 'HelveticaNeue-MediumItalic',
     },
     bold: {
-      default: 'HelveticaNeue-CondensedBold',
+      default: 'HelveticaNeue-Bold',
+      italic: 'HelveticaNeue-BoldItalic',
     },
     black: {
       default: 'HelveticaNeue-CondensedBold',
