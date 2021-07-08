@@ -18,7 +18,7 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  ContentItem,
+  // ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -38,6 +38,8 @@ import {
 } from '@apollosproject/data-connector-rock';
 
 import * as Theme from './theme';
+import * as Vimeo from './Vimeo';
+import * as ContentItem from './ContentItem';
 
 // This module is used to attach Rock User updating to the OneSignal module.
 // This module includes a Resolver that overides a resolver defined in `OneSignal`
@@ -77,6 +79,7 @@ const data = {
   Event,
   Cache,
   PrayerRequest,
+  Vimeo,
   Persona,
   Person,
   BinaryFiles,

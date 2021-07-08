@@ -17,7 +17,7 @@ import {
   Followings,
   Interactions,
   RockConstants,
-  ContentItem,
+  // ContentItem,
   ContentChannel,
   Sharable,
   Auth,
@@ -48,6 +48,8 @@ import {
 } from '@apollosproject/data-connector-postgres';
 
 import * as Theme from './theme';
+import * as Vimeo from './Vimeo';
+import * as ContentItem from './ContentItem';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
@@ -89,6 +91,7 @@ const data = {
   UserFlag,
   Follow,
   PostgresCampus,
+  Vimeo,
   Persona,
   Notification,
   NotificationPreference,
