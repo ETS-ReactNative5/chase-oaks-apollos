@@ -7,11 +7,17 @@
  * elements are colored, go there. The next level of control comes
  * on a per-component basis with "overrides"
  */
-const colors = {
+const lightColors = {
   primary: '#413A60',
   secondary: '#413A60',
   tertiary: '#E74E39',
   // an additional color for Chase Oaks is #333E48
+};
+
+const darkColors = {
+  primary: '#7366AE',
+  secondary: '#7366AE',
+  tertiary: '#E74E39',
 };
 
 /* Base Typography sizing and fonts.
@@ -97,4 +103,4 @@ const typography = {
  */
 // const overrides = {};
 
-export default { colors, typography };
+export default { lightColors, darkColors, typography };
