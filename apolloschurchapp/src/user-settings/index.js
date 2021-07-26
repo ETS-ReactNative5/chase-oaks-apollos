@@ -21,10 +21,6 @@ import {
   checkOnboardingStatusAndNavigate,
   onboardingComplete,
 } from '@apollosproject/ui-onboarding';
-<<<<<<< ours
-
-=======
->>>>>>> theirs
 import { GET_LOGIN_STATE, LOGOUT } from '@apollosproject/ui-auth';
 import {
   RockAuthedWebBrowser,
