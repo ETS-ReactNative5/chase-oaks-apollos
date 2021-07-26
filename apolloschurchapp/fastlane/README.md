@@ -20,7 +20,11 @@ or alternatively using `brew install fastlane`
 ```
 fastlane ios deploy
 ```
+<<<<<<< ours
 Push a new internal build to TestFlight
+=======
+Push a new beta build to TestFlight
+>>>>>>> theirs
 
 ----
 
