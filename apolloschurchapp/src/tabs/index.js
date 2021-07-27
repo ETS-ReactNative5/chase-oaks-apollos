@@ -81,6 +81,12 @@ const WatchTab = createFeatureFeedTab({
 
 const { Navigator, Screen } = createBottomTabNavigator();
 
+const ThemedTabNavigator = withTheme(({ theme }) => ({
+  tabBarOptions: {
+    activeTintColor: theme.colors.primary,
+  },
+}))(Navigator);
+
 const TabNavigator = () => {
   const client = useApolloClient();
   // this is only used by the tab loaded first
@@ -97,7 +103,7 @@ const TabNavigator = () => {
     [client]
   );
   return (
-    <Navigator lazy>
+    <ThemedTabNavigator lazy>
       <Screen
         name="Home"
         component={HomeTab}
@@ -118,7 +124,7 @@ const TabNavigator = () => {
         component={Connect}
         options={{ tabBarIcon: tabBarIcon('connect') }}
       />
-    </Navigator>
+    </ThemedTabNavigator>
   );
 };
 
