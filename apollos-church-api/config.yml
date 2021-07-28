@@ -158,14 +158,15 @@ TABS:
           arguments:
             channelIds:
               - 39
-      type: VerticalCardList
+            limit: 4
+      type: HeroList
       primaryAction:
         action: OPEN_CHANNEL
-        title: 'Read More'
+        title: 'See all'
         relatedNode:
           __typename: ContentChannel
-          id: 7
-          name: Devotionals
+          id: 39
+          name: Blog
 
   CONNECT:
     - type: ActionTable
