@@ -153,7 +153,7 @@ android {
         applicationId "com.chaseoaks.churchapp"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 69
+        versionCode 80
         versionName "6.0.0"
         ndk {
             abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
