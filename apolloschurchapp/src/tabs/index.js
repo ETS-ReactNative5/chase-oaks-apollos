@@ -23,8 +23,8 @@ const HeaderLogo = withTheme(({ theme }) => ({
   },
   source:
     theme.type === 'light'
-      ? require('./wordmark.png')
-      : require('./wordmark.dark.png'),
+      ? require('./wordmarkLight.png')
+      : require('./wordmarkDark.png'),
 }))(Image);
 
 const SearchIcon = withTheme(({ theme: { colors, sizing: { baseUnit } } }) => ({
@@ -43,7 +43,7 @@ SearchButton.propTypes = {
   onPress: PropTypes.func,
 };
 
-const HeaderCenter = () => <HeaderLogo source={require('./wordmark.png')} />;
+const HeaderCenter = () => <HeaderLogo />;
 const HeaderRight = () => {
   const navigation = useNavigation();
   return <SearchButton onPress={() => navigation.navigate('Search')} />;
