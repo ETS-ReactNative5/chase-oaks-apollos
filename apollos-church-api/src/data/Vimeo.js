@@ -49,6 +49,7 @@ const baseResolver = {
         // if it's not a URI, we're assuming it's a Vimeo ID
         uri: uri.startsWith('http') ? uri : Vimeo.getHLSForVideo(uri),
       })),
+      embedHtml: root.attributeValues?.videoEmbed?.value,
     }));
   },
 };
