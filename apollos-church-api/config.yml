@@ -130,7 +130,7 @@ TABS:
               - 371
             limit: 3
       type: VerticalCardList
-      title: Featured App Content
+      title: Next Steps
 
   WATCH:
     - algorithms:
