@@ -1,28 +1,31 @@
 import React from 'react';
+import { Linking } from 'react-native';
 import { ActionBar, ActionBarItem } from '@apollosproject/ui-kit';
-import { useNavigation } from '@react-navigation/native';
 import { RockAuthedWebBrowser } from '@apollosproject/ui-connected';
 
-const Toolbar = () => {
-  const navigation = useNavigation();
-  return (
-    <RockAuthedWebBrowser>
-      {(openUrl) => (
-        <ActionBar>
-          <ActionBarItem
-            onPress={() => navigation.navigate('Passes')}
-            icon="check"
-            label="Check-in"
-          />
-          <ActionBarItem
-            onPress={() => openUrl('https://apollosrock.newspring.cc/page/186')}
-            icon="download"
-            label="Give"
-          />
-        </ActionBar>
-      )}
-    </RockAuthedWebBrowser>
-  );
-};
+const Toolbar = () => (
+  <RockAuthedWebBrowser>
+    {(openUrl) => (
+      <ActionBar>
+        <ActionBarItem
+          onPress={() => openUrl('https://www.chaseoaks.org/groups')}
+          icon="groups"
+          label="Groups"
+        />
+        <ActionBarItem
+          onPress={() => Linking.openUrl('https://www.chaseoaks.org/givenow')}
+          icon="credit"
+          label="Give"
+        />
+
+        <ActionBarItem
+          onPress={() => openUrl('https://www.chaseoaks.org/serve')}
+          icon="like"
+          label="Serve"
+        />
+      </ActionBar>
+    )}
+  </RockAuthedWebBrowser>
+);
 
 export default Toolbar;
