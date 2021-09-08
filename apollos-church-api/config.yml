@@ -174,7 +174,7 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           id: 39
-          name: Blog
+          name: Articles
 
   CONNECT:
     - type: ActionTable
