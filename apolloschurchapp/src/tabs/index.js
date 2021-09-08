@@ -93,7 +93,7 @@ const CustomConnectScreen = () => (
 
 // we nest stack inside of tabs so we can use all the fancy native header features
 const HomeTab = createFeatureFeedTab({
-  screenOptions: {
+  options: {
     headerCenter: HeaderCenter,
     headerRight: HeaderRight,
     headerLeft: HeaderLeft,
@@ -104,7 +104,7 @@ const HomeTab = createFeatureFeedTab({
 });
 
 const ExploreTab = createFeatureFeedTab({
-  screenOptions: {
+  options: {
     headerLeft: HeaderLeft,
     headerRight: HeaderRight,
   },
@@ -113,7 +113,7 @@ const ExploreTab = createFeatureFeedTab({
 });
 
 const WatchTab = createFeatureFeedTab({
-  screenOptions: {
+  options: {
     headerLeft: HeaderLeft,
     headerRight: HeaderRight,
   },
@@ -122,7 +122,7 @@ const WatchTab = createFeatureFeedTab({
 });
 
 const ConnectTab = createFeatureFeedTab({
-  screenOptions: {
+  options: {
     headerLeft: HeaderLeft,
     headerRight: HeaderRight,
   },
