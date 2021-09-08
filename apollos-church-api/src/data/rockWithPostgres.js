@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export, max-classes-per-file */
-import { parseGlobalId } from '@apollosproject/server-core';
+import { parseGlobalId, createGlobalId } from '@apollosproject/server-core';
 import { Person as postgresPerson } from '@apollosproject/data-connector-postgres';
 import * as OneSignalOriginal from '@apollosproject/data-connector-onesignal';
 
@@ -136,16 +136,15 @@ export const OneSignal = {
 
 const defaultContentItemResolvers = {
   likedCount: (root, args, { dataSources }) =>
-    console.log(root, root.apollosId, root.originId) ||
     dataSources.Followings.getFollowingsCountByNodeId({
-      nodeId: root.apollosId,
-      originId: root.originId,
+      nodeId: createGlobalId(root.id, 'ContentItem'),
+      originId: root.id,
     }),
 
   isLiked: async (root, args, { dataSources }) =>
     dataSources.Followings.getIsLikedForCurrentUserAndNode({
-      nodeId: root.apollosId,
-      originId: root.originId,
+      nodeId: createGlobalId(root.id, 'ContentItem'),
+      originId: root.id,
       isLiked: null,
     }),
 };
@@ -158,9 +157,7 @@ const followingsResolvers = {
       { dataSources },
       resolveInfo
     ) => {
-      const { originId } = await dataSources.ContentItem.getFromId(
-        nodeId.split(':')[1]
-      );
+      const { id: originId } = parseGlobalId(nodeId);
       return dataSources.Followings.updateLikeContentItem({
         nodeId,
         originId,
@@ -174,9 +171,7 @@ const followingsResolvers = {
       { dataSources },
       resolveInfo
     ) => {
-      const { originId } = await dataSources.ContentItem.getFromId(
-        nodeId.split(':')[1]
-      );
+      const { id: originId } = parseGlobalId(nodeId);
       return dataSources.Followings.updateLikeNode({
         nodeId,
         originId,
