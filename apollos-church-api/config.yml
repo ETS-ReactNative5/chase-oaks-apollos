@@ -105,7 +105,7 @@ TABS:
     - algorithms: [DAILY_PRAYER]
       isCard: false
       type: PrayerList
-      title: Daily Prayer
+      subtitle: Daily Prayer
     # - type: VerticalPrayerList
     #   title: Your Prayers
     - algorithms:
@@ -114,7 +114,7 @@ TABS:
             limit: 1
             channelIds:
               - 363
-      title: Daily Scripture
+      subtitle: Daily Scripture
       type: VerticalCardList
     - algorithms:
         - type: CONTENT_FEED
@@ -123,7 +123,7 @@ TABS:
               - 364
             limit: 3
       type: HorizontalCardList
-      title: Weekly Challenges
+      subtitle: Weekly Challenges
     - algorithms:
         - type: CONTENT_FEED
           arguments:
@@ -131,7 +131,7 @@ TABS:
               - 371
             limit: 3
       type: VerticalCardList
-      title: Next Steps
+      subtitle: Next Steps
 
   WATCH:
     - algorithms:
