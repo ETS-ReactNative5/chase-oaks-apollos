@@ -1,5 +1,5 @@
 /* eslint-disable import/prefer-default-export, max-classes-per-file */
-import { parseGlobalId, createGlobalId } from '@apollosproject/server-core';
+import { parseGlobalId } from '@apollosproject/server-core';
 import { Person as postgresPerson } from '@apollosproject/data-connector-postgres';
 import * as OneSignalOriginal from '@apollosproject/data-connector-onesignal';
 
@@ -41,21 +41,6 @@ const personResolver = {
         { field: 'profileImageUrl', value: person.photo.url },
       ]); // updates in Postgres. Reuses already uploaded imageUrl
       // return dataSources.Person.uploadProfileImage(file, size); // updates in Postgres. Performs the upload again.
-    },
-    updateUserCampus: async (root, { campusId }, { dataSources }) => {
-      await dataSources.Campus.updateCurrentUserCampus({ campusId }); // updates in Rock
-
-      const { id: rockCampusId } = parseGlobalId(campusId);
-      const campus = await dataSources.PostgresCampus.getFromId(
-        rockCampusId,
-        null,
-        {
-          originType: 'rock',
-        }
-      ); // finds the postgres campus id
-      return dataSources.Person.updateProfile([
-        { field: 'campusId', value: campus.id },
-      ]); // updates in Postgres
     },
     updateUserPushSettings: async (root, { input }, { dataSources }) => {
       // register the changes w/ postgres
@@ -134,86 +119,40 @@ export const OneSignal = {
   dataSource: oneSignalDataSource,
 };
 
-const defaultContentItemResolvers = {
-  likedCount: (root, args, { dataSources }) =>
-    dataSources.Followings.getFollowingsCountByNodeId({
-      nodeId: createGlobalId(root.id, 'ContentItem'),
-      originId: root.id,
-    }),
+// Used when IDs coming from the API are Rock APIS.
+export const RockDefaultCampusOverride = {
+  resolver: {
+    Mutation: {
+      updateUserCampus: async (root, { campusId }, { dataSources }) => {
+        await dataSources.Campus.updateCurrentUserCampus({ campusId }); // updates in Rock
 
-  isLiked: async (root, args, { dataSources }) =>
-    dataSources.Followings.getIsLikedForCurrentUserAndNode({
-      nodeId: createGlobalId(root.id, 'ContentItem'),
-      originId: root.id,
-      isLiked: null,
-    }),
-};
-
-const followingsResolvers = {
-  Mutation: {
-    updateLikeEntity: async (
-      root,
-      { input: { nodeId, operation } },
-      { dataSources },
-      resolveInfo
-    ) => {
-      const { id: originId } = parseGlobalId(nodeId);
-      return dataSources.Followings.updateLikeContentItem({
-        nodeId,
-        originId,
-        operation,
-        resolveInfo,
-      });
-    },
-    updateLikeNode: async (
-      root,
-      { input: { nodeId, operation } },
-      { dataSources },
-      resolveInfo
-    ) => {
-      const { id: originId } = parseGlobalId(nodeId);
-      return dataSources.Followings.updateLikeNode({
-        nodeId,
-        originId,
-        operation,
-        resolveInfo,
-      });
+        const { id: rockCampusId } = parseGlobalId(campusId);
+        const campus = await dataSources.PostgresCampus.getFromId(
+          rockCampusId,
+          null,
+          {
+            originType: 'rock',
+          }
+        ); // finds the postgres campus id
+        return dataSources.Person.updateProfile([
+          { field: 'campusId', value: campus.id },
+        ]); // updates in Postgres
+      },
     },
   },
-  Query: {
-    likedContent: async (root, { after, first }, { dataSources }) => {
-      const followingsPaginated = await dataSources.Followings.paginatedGetFollowingsForCurrentUser(
-        { type: 'ContentItem', after, first }
-      );
-
-      const followings = await followingsPaginated.edges;
-      const ids = followings.map((f) => f.node.entityId);
-      const contentItems = await dataSources.ContentItem.getFromOriginIds(ids);
-      const contentItemEdges = contentItems.map((contentItem) => ({
-        node: contentItem,
-        following: followings.find(
-          (f) => String(f.node.entityId) === contentItem.originId
-        ).node,
-        cursor: followings.find(
-          (f) => String(f.node.entityId) === contentItem.originId
-        ).cursor,
-      }));
-      const sortedContentItemEdges = contentItemEdges.sort(
-        (a, b) =>
-          new Date(a.following.createdDateTime) <
-          new Date(b.following.createdDateTime)
-      );
-
-      return { edges: sortedContentItemEdges };
-    },
-  },
-  UniversalContentItem: defaultContentItemResolvers,
-  DevotionalContentItem: defaultContentItemResolvers,
-  ContentSeriesContentItem: defaultContentItemResolvers,
-  WeekendContentItem: defaultContentItemResolvers,
-  MediaContentItem: defaultContentItemResolvers,
 };
 
-export const Followings = {
-  resolver: followingsResolvers,
+// Used when IDs coming from the API are Postgres APIS.
+export const PostgresDefaultCampusOverride = {
+  resolver: {
+    Mutation: {
+      updateUserCampus: async (root, { campusId }, { dataSources }) => {
+        const campus = await dataSources.Campus.getFromId(campusId); // finds the postgres campus id
+        await dataSources.Person.updateProfile([
+          { field: 'campusId', value: campus.originId },
+        ]); // updates in Rock
+        return dataSources.Campus.updateCurrentUserCampus({ campusId }); // updates in Rock
+      },
+    },
+  },
 };
