@@ -13,7 +13,7 @@ const Toolbar = () => (
           label="Groups"
         />
         <ActionBarItem
-          onPress={() => Linking.openUrl('https://www.chaseoaks.org/givenow')}
+          onPress={() => Linking.openURL('https://www.chaseoaks.org/givenow')}
           icon="credit"
           label="Give"
         />
