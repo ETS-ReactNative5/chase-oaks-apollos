@@ -41,6 +41,28 @@ class dataSource extends ContentItem.dataSource {
     }
     return features;
   };
+
+  byTaggedContent = async (tag) => {
+    if (!tag) return this.request().empty();
+
+    // 212 is App Content Category defined type
+    const value = await this.request('DefinedValues')
+      .filter(`DefinedTypeId eq 212 and Value eq '${tag}'`)
+      .first();
+    if (!value?.guid) return this.request().empty();
+
+    const attributeValues = await this.request('AttributeValues')
+      .filter(
+        // 13054 is the Category attribute
+        `AttributeId eq 13054 and Value eq '${value.guid}'`
+      )
+      .get();
+    const contentIds = attributeValues.map(({ entityId }) => entityId);
+
+    return this.getFromIds(contentIds)
+      .cache({ ttl: 60 })
+      .orderBy('StartDateTime', 'desc');
+  };
 }
 
 export { resolver, schema, dataSource };
