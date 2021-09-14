@@ -1,4 +1,4 @@
-package com.differential.apollos;
+package com.chaseoaks.churchapp;
 
 import com.bugsnag.android.Bugsnag;
 import android.app.Application;
