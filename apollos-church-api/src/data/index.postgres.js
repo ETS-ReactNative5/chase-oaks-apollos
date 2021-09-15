@@ -133,6 +133,7 @@ const data = {
   NotificationPreference,
   OneSignal,
   Person, // An extension of Postgres person. Will be eliminated in the near future so you can use just postgres/Person.
+  Vimeo,
 };
 
 const {
