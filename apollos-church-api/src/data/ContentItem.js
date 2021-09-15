@@ -28,12 +28,12 @@ class dataSource extends ContentItem.dataSource {
       // sermon channel
       features.push(
         Feature.createHorizontalCardListFeature({
-          title: 'Your Next Steps',
-          // TODO, just grabs top 5 from one of their existing channels
+          title: 'Next Steps',
+          // grabs top 5 from the "Featured Next Steps" content channel
           algorithms: [
             {
               type: 'CONTENT_FEED',
-              arguments: { limit: 5, channelIds: [364] },
+              arguments: { limit: 5, channelIds: [389] },
             },
           ],
         })

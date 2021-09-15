@@ -69,7 +69,7 @@ ROCK_MAPPINGS:
       # When resolving "ContentSeriesContentItem" look in rock for a "ContentChannelItem"
       EntityType: ContentChannelItem
       # Used to define the subset of content channels types that use this specific type.
-      ContentChannelTypeId: [22]
+      ContentChannelTypeId: [22, 392, 393, 394, 395]
     DevotionalContentItem:
       EntityType: ContentChannelItem
       ContentChannelId: [363]
@@ -78,7 +78,7 @@ ROCK_MAPPINGS:
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [23]
+      ContentChannelId: [23, 383, 384, 391, 390]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
@@ -94,6 +94,14 @@ ROCK_MAPPINGS:
     - 39 # Blog
     - 23 # Sermon Messages
     - 22 # Sermon Series
+    - 392
+    - 393
+    - 394
+    - 395
+    - 383
+    - 384
+    - 391
+    - 390
 
   SERMON_CHANNEL_ID: 23
 
@@ -144,20 +152,63 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           id: 23
-    - algorithms:
+    - algorithms: # worship
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 383
+            limit: 5
+      type: HorizontalCardList
+      title: Worship
+      primaryAction:
+        action: OPEN_CHANNEL
+        relatedNode:
+          __typename: ContentChannel
+          id: 383
+          name: Worship
+    - algorithms: # kids
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 384
+            limit: 5
+      type: HorizontalCardList
+      title: Kids
+      primaryAction:
+        action: OPEN_CHANNEL
+        relatedNode:
+          __typename: ContentChannel
+          id: 384
+          name: Kids
+    - algorithms: # en espanol
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 390
+            limit: 5
+      type: HorizontalCardList
+      title: En Español
+      primaryAction:
+        action: OPEN_CHANNEL
+        relatedNode:
+          __typename: ContentChannel
+          id: 390
+          name: En Español
+    - algorithms: # series
         - type: CONTENT_FEED
           arguments:
             channelIds:
               - 22
-            limit: 3
+            limit: 5
       type: HorizontalCardList
-      title: Browse by series
+      title: All Series
       primaryAction:
         action: OPEN_CHANNEL
         relatedNode:
           __typename: ContentChannel
           id: 22
           name: Series
+
 
   READ:
     - algorithms:
