@@ -9,14 +9,14 @@
  */
 const lightColors = {
   primary: '#413A60',
-  secondary: '#413A60',
+  secondary: '#E74E39',
   tertiary: '#E74E39',
   // an additional color for Chase Oaks is #333E48
 };
 
 const darkColors = {
-  primary: '#7366AE',
-  secondary: '#7366AE',
+  primary: '#7573B5',
+  secondary: '#E74E39',
   tertiary: '#E74E39',
 };
 
