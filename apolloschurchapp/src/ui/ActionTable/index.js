@@ -47,9 +47,7 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() =>
-              openUrl('https://www.chaseoaks.org/contact-chase-oaks')
-            }
+            onPress={() => openUrl('https://chaseoaks.typeform.com/to/SHgk5w')}
           >
             <Cell>
               <CellText>I need prayer</CellText>
@@ -58,9 +56,7 @@ const ActionTable = () => (
           </Touchable>
           <Divider />
           <Touchable
-            onPress={() =>
-              openUrl('https://www.chaseoaks.org/contact-chase-oaks')
-            }
+            onPress={() => openUrl('https://www.chaseoaks.org/baptism')}
           >
             <Cell>
               <CellText>Get baptized</CellText>
@@ -68,11 +64,7 @@ const ActionTable = () => (
             </Cell>
           </Touchable>
           <Divider />
-          <Touchable
-            onPress={() =>
-              openUrl('https://www.chaseoaks.org/contact-chase-oaks')
-            }
-          >
+          <Touchable onPress={() => openUrl('https://www.chaseoaks.org/care')}>
             <Cell>
               <CellText>Get care</CellText>
               <CellIcon name="arrow-next" />

@@ -13,7 +13,7 @@ import {
   Themer,
 } from '@apollosproject/ui-kit';
 
-import { useNavigation, useTheme } from '@react-navigation/native';
+import { useNavigation } from '@react-navigation/native';
 import { Slide } from '@apollosproject/ui-onboarding';
 
 const Layout = styled({
@@ -42,7 +42,7 @@ const Content = styled({
 const Title = styled({ textAlign: 'center' })(H1);
 const Subtitle = styled(({ theme }) => ({
   textAlign: 'center',
-  width: '60%',
+  width: '70%',
   paddingTop: theme.sizing.baseUnit,
 }))(H4);
 
@@ -65,13 +65,13 @@ const Landing = () => {
             <View />
             <Content>
               <BrandIcon />
-              <Title>Hey 👋!</Title>
-              <Subtitle>Build a daily spiritual habit with others.</Subtitle>
+              <Title>Hi There 👋!</Title>
+              <Subtitle>Let’s build daily spiritual habits together.</Subtitle>
             </Content>
             <PaddedView vertical={false}>
               <Button
                 onPress={onPressPrimary}
-                title="Let's Go!"
+                title="Get started"
                 type="secondary"
                 pill={false}
               />

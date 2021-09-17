@@ -25,7 +25,7 @@ const withAuthProps = (Component) => (props) => (
     {...props}
     promptText={
       <Text>
-        Sign in to build a daily habit with others.
+        Let's sign in to build a daily habit with others.
         {'\n'}
         Just checking us out? Visit our{' '}
         <ButtonLink onPress={handleOpenWebsite}>website</ButtonLink> to learn
