@@ -60,6 +60,7 @@ import * as Theme from './theme';
 import * as Vimeo from './Vimeo';
 import * as RockContentItem from './ContentItem';
 import * as RockActionAlgorithm from './ActionAlgorithm';
+import * as tempCampusModel from './tempCampusModel';
 
 // This modules ties together certain updates so they occurs in both Rock and Postgres.
 // Will be eliminated in the future through an enhancement to the Shovel
@@ -94,7 +95,11 @@ const rockContentModules = {
   ContentItem: RockContentItem,
   ContentChannel,
   PrayerRequest,
-  PostgresCampus: { dataSource: Campus.dataSource },
+  PostgresCampus: {
+    dataSource: Campus.dataSource,
+    models: tempCampusModel,
+    migrations: Campus.migrations,
+  },
   Campus: RockCampus,
   RockDefaultCampusOverride,
 };
