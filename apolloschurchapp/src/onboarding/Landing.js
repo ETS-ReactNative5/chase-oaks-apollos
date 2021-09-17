@@ -24,7 +24,7 @@ const Layout = styled({
 const BrandIcon = withTheme(
   ({ theme, color }) => ({
     name: 'brand-icon',
-    size: theme.sizing.baseUnit * 4,
+    size: theme.sizing.baseUnit * 5,
     ...(color ? { fill: color } : {}),
     style: {
       marginBottom: theme.sizing.baseUnit,
@@ -65,8 +65,8 @@ const Landing = () => {
             <View />
             <Content>
               <BrandIcon />
-              <Title>Welcome to Church!</Title>
-              <Subtitle>Build a daily spiritual habit, with others.</Subtitle>
+              <Title>Hey 👋!</Title>
+              <Subtitle>Build a daily spiritual habit with others.</Subtitle>
             </Content>
             <PaddedView vertical={false}>
               <Button
