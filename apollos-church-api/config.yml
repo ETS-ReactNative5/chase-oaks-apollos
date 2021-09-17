@@ -152,48 +152,48 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           id: 23
-    - algorithms: # worship
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 383
-            limit: 5
-      type: HorizontalCardList
-      title: Worship
-      primaryAction:
-        action: OPEN_CHANNEL
-        relatedNode:
-          __typename: ContentChannel
-          id: 383
-          name: Worship
-    - algorithms: # kids
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 384
-            limit: 5
-      type: HorizontalCardList
-      title: Kids
-      primaryAction:
-        action: OPEN_CHANNEL
-        relatedNode:
-          __typename: ContentChannel
-          id: 384
-          name: Kids
-    - algorithms: # en espanol
-        - type: CONTENT_FEED
-          arguments:
-            channelIds:
-              - 390
-            limit: 5
-      type: HorizontalCardList
-      title: En Español
-      primaryAction:
-        action: OPEN_CHANNEL
-        relatedNode:
-          __typename: ContentChannel
-          id: 390
-          name: En Español
+    # - algorithms: # worship
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         channelIds:
+    #           - 383
+    #         limit: 5
+    #   type: HorizontalCardList
+    #   title: Worship
+    #   primaryAction:
+    #     action: OPEN_CHANNEL
+    #     relatedNode:
+    #       __typename: ContentChannel
+    #       id: 383
+    #       name: Worship
+    # - algorithms: # kids
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         channelIds:
+    #           - 384
+    #         limit: 5
+    #   type: HorizontalCardList
+    #   title: Kids
+    #   primaryAction:
+    #     action: OPEN_CHANNEL
+    #     relatedNode:
+    #       __typename: ContentChannel
+    #       id: 384
+    #       name: Kids
+    # - algorithms: # en espanol
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         channelIds:
+    #           - 390
+    #         limit: 5
+    #   type: HorizontalCardList
+    #   title: En Español
+    #   primaryAction:
+    #     action: OPEN_CHANNEL
+    #     relatedNode:
+    #       __typename: ContentChannel
+    #       id: 390
+    #       name: En Español
     - algorithms: # series
         - type: CONTENT_FEED
           arguments:
