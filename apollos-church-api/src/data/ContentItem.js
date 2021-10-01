@@ -1,5 +1,6 @@
 import { ContentItem } from '@apollosproject/data-connector-rock';
 import moment from 'moment';
+import { isThisWeek } from 'date-fns';
 import ApollosConfig from '@apollosproject/config';
 
 const { ROCK } = ApollosConfig;
@@ -40,6 +41,35 @@ class dataSource extends ContentItem.dataSource {
     //   );
     // }
     return features;
+  };
+
+  getVideos = ({ attributes, startDateTime, attributeValues }) => {
+    const videoKeys = Object.keys(attributes).filter((key) =>
+      this.attributeIsVideo({
+        key,
+        attributeValues,
+        attributes,
+      })
+    );
+    const keysByDate = videoKeys.filter(
+      isThisWeek(new Date(startDateTime))
+        ? (key) => key === 'fullLengthVideoEmbed'
+        : (key) => key === 'videoEmbed'
+    );
+    const keys = keysByDate.map((key) => ({
+      __typename: 'VideoMedia',
+      key,
+      name: attributes[key].name,
+      embedHtml: attributeValues[key].value,
+      sources: attributeValues[key].value
+        ? [
+            {
+              uri: attributeValues[key].value,
+            },
+          ]
+        : [],
+    }));
+    return keys;
   };
 
   byTaggedContent = async (tag) => {
