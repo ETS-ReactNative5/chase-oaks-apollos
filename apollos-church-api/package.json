@@ -6,6 +6,7 @@
   "scripts": {
     "setup": "./scripts/init.sh",
     "start": "NODE_ENV=production node ./lib/index.js",
+    "migrator": "node ./lib/migrator.js",
     "start:dev": "linkemon ./src/index.js --exec babel-node --delay 2 -e js,yaml,json,yml",
     "postinstall": "yarn build",
     "build": "NODE_ENV=production rm -rf ./lib && mkdir -p lib && babel ./src -d ./lib",
@@ -36,6 +37,7 @@
     "apollo-server": "^2.24.1",
     "apollo-server-express": "2.14.2",
     "color": "3.0.0",
+    "date-fns": "^2.24.0",
     "dotenv": "6.0.0",
     "express": "^4.17.0",
     "graphql": "14.6.0",
