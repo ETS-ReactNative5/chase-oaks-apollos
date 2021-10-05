@@ -195,6 +195,20 @@ TABS:
         relatedNode:
           __typename: ContentChannel
           id: 23
+     - algorithms: # groups
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 391
+            limit: 5
+      type: HorizontalCardList
+      title: Groups
+      primaryAction:
+        action: OPEN_CHANNEL
+        relatedNode:
+          __typename: ContentChannel
+          id: 391
+          name: Groups
     # - algorithms: # worship
     #     - type: CONTENT_FEED
     #       arguments:
