@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { View, Image } from 'react-native';
+import { Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
@@ -51,7 +51,7 @@ SearchButton.propTypes = {
 const Avatar = withTheme(({ theme: { sizing: { baseUnit } } }) => ({
   size: 'small',
   containerStyle: {
-    paddingBottom: baseUnit * 0.25,
+    padding: baseUnit * 0.25,
   },
 }))(UserAvatarConnected);
 
