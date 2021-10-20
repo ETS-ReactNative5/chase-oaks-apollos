@@ -24,22 +24,22 @@ class dataSource extends ContentItem.dataSource {
 
   getFeatures = async (item) => {
     const features = await super.getFeatures(item);
-    // const { Feature } = this.context.dataSources;
-    // if (item.contentChannelId === 23) {
-    //   // sermon channel
-    //   features.push(
-    //     Feature.createHorizontalCardListFeature({
-    //       title: 'Next Steps',
-    //       // grabs top 5 from the "Featured Next Steps" content channel
-    //       algorithms: [
-    //         {
-    //           type: 'CONTENT_FEED',
-    //           arguments: { limit: 5, channelIds: [389] },
-    //         },
-    //       ],
-    //     })
-    //   );
-    // }
+    const { Feature } = this.context.dataSources;
+    if (item.contentChannelId === 23) {
+      // sermon channel
+      features.push(
+        Feature.createHorizontalCardListFeature({
+          title: 'Next Steps',
+          // grabs top 5 from the "Featured Next Steps" content channel
+          algorithms: [
+            {
+              type: 'OPEN_URL_CONTENT_FEED',
+              arguments: { limit: 5, channelIds: [389] },
+            },
+          ],
+        })
+      );
+    }
     return features;
   };
 
@@ -52,7 +52,8 @@ class dataSource extends ContentItem.dataSource {
       })
     );
     const keysByDate = videoKeys.filter(
-      isThisWeek(new Date(startDateTime)) && videoKeys.includes('fullLengthVideoEmbed')
+      isThisWeek(new Date(startDateTime)) &&
+      videoKeys.includes('fullLengthVideoEmbed')
         ? (key) => key === 'fullLengthVideoEmbed'
         : (key) => key === 'videoEmbed'
     );
