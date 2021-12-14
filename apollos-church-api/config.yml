@@ -226,14 +226,14 @@ TABS:
               - 392
             limit: 5
       type: HorizontalCardList
-      title: Groups
+      title: Transformation
       primaryAction:
         action: OPEN_CHANNEL
         title: 'View All'
         relatedNode:
           __typename: ContentChannel
           id: 392
-          name: Groups
+          name: Transformation
     - algorithms: # worship
         - type: CONTENT_FEED
           arguments:
