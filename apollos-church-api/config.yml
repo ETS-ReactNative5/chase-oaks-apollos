@@ -219,7 +219,7 @@ TABS:
           __typename: ContentChannel
           id: 401
           name: Post Script
-    - algorithms: # groups
+    - algorithms: # Transformation
         - type: CONTENT_FEED
           arguments:
             channelIds:
@@ -371,20 +371,20 @@ TABS:
           __typename: ContentChannel
           id: 22
           name: Series
-    - algorithms: # groups
+    - algorithms: # Transformation
         - type: CONTENT_FEED
           arguments:
             channelIds:
               - 392
             limit: 5
       type: HorizontalCardList
-      title: Groups
+      title: Transformation
       primaryAction:
         action: OPEN_CHANNEL
         relatedNode:
           __typename: ContentChannel
           id: 392
-          name: Groups
+          name: Transformation
     - algorithms: # worship
         - type: CONTENT_FEED
           arguments:
