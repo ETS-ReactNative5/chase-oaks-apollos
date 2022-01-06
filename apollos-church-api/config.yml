@@ -120,7 +120,7 @@ ROCK_MAPPINGS:
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [23, 383, 384, 391, 390]
+      ContentChannelId: [23, 383, 384, 391, 390, 426]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
@@ -136,6 +136,7 @@ ROCK_MAPPINGS:
     - 39 # Blog
     - 23 # Sermon Messages
     - 22 # Sermon Series
+    - 426 # 40 day challenge
     - 392
     - 393
     - 394
