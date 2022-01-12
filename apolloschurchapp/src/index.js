@@ -29,6 +29,7 @@ import {
   ContentSingleConnected,
   ContentFeedConnected,
   SearchScreenConnected,
+  UserSettingsConnected,
 } from '@apollosproject/ui-connected';
 import Providers from './Providers';
 import Tabs from './tabs';

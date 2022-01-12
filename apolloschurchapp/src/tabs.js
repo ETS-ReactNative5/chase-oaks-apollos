@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { Image, View } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
@@ -6,6 +6,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import {
   NavigationService,
   withTheme,
+  useTheme,
   Icon,
   Touchable,
 } from '@apollosproject/ui-kit';
@@ -16,9 +17,6 @@ import {
   ConnectScreenConnected,
 } from '@apollosproject/ui-connected';
 import { checkOnboardingStatusAndNavigate } from '@apollosproject/ui-onboarding';
-import ActionTable from '../ui/ActionTable';
-import ActionBar from '../ui/ActionBar';
-import tabBarIcon from './tabBarIcon';
 
 const HeaderLogo = withTheme(({ theme }) => ({
   style: {
@@ -67,14 +65,18 @@ ProfileButton.propTypes = {
   onPress: PropTypes.func,
 };
 
-const HeaderLeft = () => {
+const ProfileButton = () => {
   const navigation = useNavigation();
   return (
-    <ProfileButton
+    <Touchable
       onPress={() => {
         navigation.navigate('UserSettingsNavigator');
       }}
-    />
+    >
+      <View>
+        <UserAvatarConnected size="xsmall" />
+      </View>
+    </Touchable>
   );
 };
 const HeaderCenter = () => <HeaderLogo />;
@@ -143,16 +145,13 @@ const TabNavigator = () => {
   // this is only used by the tab loaded first
   // if there is a new version of the onboarding flow,
   // we'll navigate there first to show new screens
-  useEffect(
-    () => {
-      checkOnboardingStatusAndNavigate({
-        client,
-        navigation: NavigationService,
-        navigateHome: false,
-      });
-    },
-    [client]
-  );
+  useEffect(() => {
+    checkOnboardingStatusAndNavigate({
+      client,
+      navigation: NavigationService,
+      navigateHome: false,
+    });
+  }, [client]);
   return (
     <ThemedTabNavigator lazy>
       <Screen
