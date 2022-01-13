@@ -28,6 +28,34 @@ before_all do
   git_pull
 end
 
+def apollos_console(platform, status)
+  require 'json'
+  require 'net/http'
+
+  uri = URI('https://data.mongodb-api.com/app/data-ugktb/endpoint/data/beta/action/updateOne')
+  req = Net::HTTP::Post.new(uri)
+  req['Content-Type'] = 'application/json'
+  req['Access-Control-Request-Headers'] = '*'
+  req['api-key'] = ENV["APOLLOS_CONSOLE_MONGO_API_KEY"]
+
+  req.body = {
+      "dataSource": "Cluster0",
+      "database": "apollos",
+      "collection": "deployments",
+      "filter": { "church": "Chase Oaks" },
+      "update": {
+          "$set": {
+              platform => status,
+              "version": number_of_commits
+          }
+      }}.to_json
+
+  Net::HTTP.start(uri.hostname, uri.port, :use_ssl => uri.scheme == 'https') do |http|
+    http.request(req)
+  end
+end
+
+
 
 platform :ios do
 
@@ -41,6 +69,8 @@ platform :ios do
 
   desc "Push a new internal build to TestFlight"
   lane :deploy do
+    apollos_console("ios", "Started")
+
 
     # get project name
     proj = Dir.glob("../ios/*.xcworkspace")[0][7..-13]
@@ -56,6 +86,7 @@ platform :ios do
     build_app(workspace: "ios/" << proj << ".xcworkspace", scheme: proj)
     changelog_from_git_commits
     testflight
+    apollos_console("ios", "Passed")
   end
 
   desc "Promote the most recent Testflight version to production"
@@ -74,12 +105,16 @@ platform :ios do
       run_precheck_before_submit: false
     )
   end
+  error do |lane, exception|
+    apollos_console("ios", "Failed")
+  end
 end
 
 platform :android do
 
   desc "Deploy a new version to the Google Play"
   lane :deploy do
+    apollos_console("ios", "Started")
     bump_version_code
     gradle(task: 'clean', project_dir: 'android')
     gradle(task: 'bundle', build_type: 'Release', project_dir: 'android')
@@ -94,11 +129,9 @@ platform :android do
       json_key: "android/key.json",
       package_name: package_name
     )
+    apollos_console("ios", "Passed")
   end
-end
-
-error do |lane, exception|
-  s = File.read("../app.json")
-  app_name = s[/"name": "(.*)",/, 1]
-  slack(message: app_name << " - " << exception.to_s, success: false)
+  error do |lane, exception|
+    apollos_console("android", "Failed")
+  end
 end
