@@ -27,7 +27,7 @@ class dataSource extends ContentItem.dataSource {
     const { Feature } = this.context.dataSources;
 
     // They generally want buttons just below description text, so this moves buttons to the first feature.
-    if (features[features.length - 1].__typename === 'ButtonFeature') {
+    if (features[features.length - 1]?.__typename === 'ButtonFeature') {
       features.unshift(features.pop());
     }
 
