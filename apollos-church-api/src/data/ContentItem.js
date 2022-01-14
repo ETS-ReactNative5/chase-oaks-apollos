@@ -25,6 +25,13 @@ class dataSource extends ContentItem.dataSource {
   getFeatures = async (item) => {
     const features = await super.getFeatures(item);
     const { Feature } = this.context.dataSources;
+
+    if (features[features.length - 1].__typename === 'ButtonFeature') {
+      console.log('test1', features);
+      features.unshift(features.pop());
+      console.log('test2', features);
+    }
+
     if (item.contentChannelId === 23) {
       // sermon channel
       features.push(
