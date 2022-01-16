@@ -4,8 +4,9 @@ import {
   format,
   formatISO,
   previousSunday,
-  nextMonday,
+  nextSaturday,
   startOfToday,
+  endOfToday,
 } from 'date-fns';
 
 const { resolver } = ActionAlgorithm;
@@ -119,7 +120,7 @@ class dataSource extends ActionAlgorithm.dataSource {
             `((StartDateTime gt datetime'${formatISO(
               previousSunday(startOfToday())
             )}') and (StartDateTime lt datetime'${formatISO(
-              nextMonday(startOfToday())
+              nextSaturday(endOfToday())
             )}'))`
           )
           .top(limit)
