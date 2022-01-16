@@ -114,7 +114,10 @@ class dataSource extends ActionAlgorithm.dataSource {
 
     const items = (await Promise.all(
       channelIds.map(async (channel) =>
-        (await ContentItem.byContentChannelId(channel, category, false))
+        ContentItem.request()
+          .filter(`ContentChannelId eq ${chanel}`)
+          .cache({ ttl: 60 })
+          .orderBy('StartDateTime', 'asc')
           .sort([{ field: 'StartDateTime', direction: 'asc' }])
           .andFilter(
             `((StartDateTime gt datetime'${formatISO(
