@@ -175,14 +175,14 @@ TABS:
               - 426
       type: ActionList
       isCard: false
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 1
-            channelIds:
-              - 363
-      title: Daily Scripture
-      type: VerticalCardList
+    # - algorithms:
+    #     - type: CONTENT_FEED
+    #       arguments:
+    #         limit: 1
+    #         channelIds:
+    #           - 363
+    #   title: Daily Scripture
+    #   type: VerticalCardList
     - algorithms:
         - type: PRIORITY_CONTENT_FEED
           arguments:
