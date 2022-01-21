@@ -116,12 +116,11 @@ ROCK_MAPPINGS:
       EntityType: ContentChannelItem
       ContentChannelId: [363]
     MediaContentItem:
-      ContentChannelId: [426]
+      ContentChannelId: [23, 383, 384, 391, 390, 426]
       EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
     WeekendContentItem:
-      ContentChannelId: [23, 383, 384, 391, 390]
       EntityType: ContentChannelItem
     ContentItem:
       EntityType: ContentChannelItem
@@ -148,7 +147,7 @@ ROCK_MAPPINGS:
     - 390
     - 389
 
-  SERMON_CHANNEL_ID: 23
+  # SERMON_CHANNEL_ID: 23
 
 TABS:
   HOME:
