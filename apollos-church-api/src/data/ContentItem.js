@@ -22,6 +22,10 @@ class dataSource extends ContentItem.dataSource {
   attributeIsVideo = ({ key }) =>
     key.toLowerCase().includes('video') || key.toLowerCase().includes('vimeo');
 
+  getActiveLiveStreamContent = () =>
+    // Disables Livestream
+    [];
+
   getFeatures = async (item) => {
     const features = await super.getFeatures(item);
     const { Feature } = this.context.dataSources;
