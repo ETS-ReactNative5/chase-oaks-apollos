@@ -22,6 +22,8 @@ class dataSource extends ContentItem.dataSource {
   attributeIsVideo = ({ key }) =>
     key.toLowerCase().includes('video') || key.toLowerCase().includes('vimeo');
 
+  // TODO: This needs to be a core fix that if CHURCH_ONLINE is false, isLive returns false
+  // Remove this code once we have that in core.
   getActiveLiveStreamContent = () =>
     // Disables Livestream
     [];
