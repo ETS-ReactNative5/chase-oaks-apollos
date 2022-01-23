@@ -121,7 +121,7 @@ class dataSource extends ActionAlgorithm.dataSource {
           .sort([{ field: 'StartDateTime', direction: 'asc' }])
           .andFilter(
             `((StartDateTime gt datetime'${formatISO(
-              previousSunday(startOfToday())
+              previousSunday(startOfTomorrow())
             )}') and (StartDateTime lt datetime'${formatISO(
               nextSaturday(endOfToday())
             )}'))`
