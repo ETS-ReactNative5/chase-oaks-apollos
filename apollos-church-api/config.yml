@@ -116,7 +116,7 @@ ROCK_MAPPINGS:
       EntityType: ContentChannelItem
       ContentChannelId: [363]
     MediaContentItem:
-      ContentChannelId: [23, 383, 384, 391, 390, 426]
+      ContentChannelId: [23, 143, 383, 384, 391, 390, 426]
       EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
@@ -137,6 +137,7 @@ ROCK_MAPPINGS:
     - 23 # Sermon Messages
     - 22 # Sermon Series
     - 426 # 40 day challenge
+    - 143 # Guided Discussion
     - 392
     - 393
     - 394
@@ -313,6 +314,13 @@ TABS:
           __typename: ContentChannel
           id: 39
           name: Articles
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            channelIds:
+              - 143
+      type: HorizontalCardList
+      subtitle: Guided Discussion
     - algorithms:
         - type: TAGGED_CONTENT_FEED
           arguments:
