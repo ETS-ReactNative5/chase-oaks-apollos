@@ -22,6 +22,8 @@ class dataSource extends ContentItem.dataSource {
   attributeIsVideo = ({ key }) =>
     key.toLowerCase().includes('video') || key.toLowerCase().includes('vimeo');
 
+  _coreParentCursor = this.getCursorByParentContentItemId;
+
   // TODO: This needs to be a core fix that if CHURCH_ONLINE is false, isLive returns false
   // Remove this code once we have that in core.
   getActiveLiveStreamContent = () =>
@@ -38,7 +40,31 @@ class dataSource extends ContentItem.dataSource {
     }
 
     if (item.contentChannelId === 23) {
-      // sermon channel
+      const cursor = await this._coreParentCursor(item.id);
+      const childItems = await cursor.get();
+
+      if (childItems.length) {
+        const discussionGuide = childItems[0];
+
+        // sermon channel
+        // ID below in the relatedNode is broken
+        features.push(
+          Feature.createActionTableFeature({
+            __typename: 'ActionTableFeature',
+            title: '',
+            actions: [
+              {
+                title: 'Discussion Guide',
+                action: 'READ_CONTENT',
+                relatedNode: {
+                  __typename: 'UniversalContentItem',
+                  id: discussionGuide.id,
+                },
+              },
+            ],
+          })
+        );
+      }
       features.push(
         Feature.createHorizontalCardListFeature({
           title: 'Next Steps',
