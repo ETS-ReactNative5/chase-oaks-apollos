@@ -357,6 +357,12 @@ TABS:
             tag: Culture and News
       type: HorizontalCardList
       subtitle: Culture and News
+    - algorithms:
+        - type: TAGGED_CONTENT_FEED
+          arguments:
+            tag: Leadership
+      type: HorizontalCardList
+      subtitle: Leadership
 
   CONNECT:
     - type: ActionTable
