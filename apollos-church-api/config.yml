@@ -116,7 +116,7 @@ ROCK_MAPPINGS:
       EntityType: ContentChannelItem
       ContentChannelId: [363]
     MediaContentItem:
-      ContentChannelId: [23, 143, 383, 384, 391, 390, 426]
+      ContentChannelId: [23, 143, 383, 384, 391, 390, 426, 464]
       EntityType: ContentChannelItem
     UniversalContentItem:
       EntityType: ContentChannelItem
@@ -166,15 +166,25 @@ TABS:
     #           - 426
     #   title: 40 Day Challenge
     #   type: VerticalCardList
-    # - title: This Week # This pulls the 7 content items for 40 Day Challenge this week
-    #   subtitle: 40 Day Challenge
-    #   algorithms:
-    #     - type: WEEKLY_CONTENT_FEED
-    #       arguments:
-    #         channelIds:
-    #           - 426
-    #   type: ActionList
-    #   isCard: false
+#     - title: This Week # This pulls the 7 content items for 40 Day Challenge this week
+#       subtitle: 40 Day Challenge
+#       algorithms:
+#         - type: WEEKLY_CONTENT_FEED
+#           arguments:
+#             channelIds:
+#               - 426
+#       type: ActionList
+#       isCard: false
+#    - title: This Week # This pulls the 7 content items for 40 Day Challenge this week
+    - subtitle: Stations of the Cross
+      algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 12
+            channelIds:
+              - 464
+      type: ActionList
+      isCard: true
     - algorithms:
         - type: CONTENT_FEED
           arguments:
