@@ -176,6 +176,15 @@ TABS:
 #       type: ActionList
 #       isCard: false
 #    - title: This Week # This pulls the 7 content items for 40 Day Challenge this week
+
+    - algorithms:
+        - type: CONTENT_FEED
+          arguments:
+            limit: 1
+            channelIds:
+              - 363
+      title: Daily Scripture
+      type: VerticalCardList
     - subtitle: Stations of the Cross
       algorithms:
         - type: CONTENT_FEED
@@ -185,14 +194,6 @@ TABS:
               - 464
       type: ActionList
       isCard: true
-    - algorithms:
-        - type: CONTENT_FEED
-          arguments:
-            limit: 1
-            channelIds:
-              - 363
-      title: Daily Scripture
-      type: VerticalCardList
     - algorithms:
         - type: PRIORITY_CONTENT_FEED
           arguments:
