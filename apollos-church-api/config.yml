@@ -192,8 +192,7 @@ TABS:
             limit: 12
             channelIds:
               - 464
-      type: ActionList
-      isCard: true
+      type: HorizontalCardList
     - algorithms:
         - type: PRIORITY_CONTENT_FEED
           arguments:
