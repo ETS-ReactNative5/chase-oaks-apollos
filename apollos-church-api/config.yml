@@ -185,11 +185,11 @@ TABS:
               - 363
       title: Daily Scripture
       type: VerticalCardList
-    - subtitle: Stations of the Cross
+    - title: Stations of the Cross
       algorithms:
         - type: CONTENT_FEED
           arguments:
-            limit: 12
+            limit: 20
             channelIds:
               - 464
       type: HorizontalCardList
